@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Category</title>
+    <style>
+        body {
+            background-color: #89ABE3; /* Set your desired background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensures content is centered vertically */
+            margin: 0; /* Removes default margin */
+        }
+        .form-container {
+            text-align: center; /* Center align form content */
+            background-color: white; /* Background color for the form area */
+            padding: 20px; /* Add some padding for better appearance */
+            border-radius: 8px; /* Add rounded corners for the form area */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visual */
+        }
+        label {
+            display: block; /* Ensure labels are displayed one below the other */
+            margin-bottom: 5px; /* Add some space between labels */
+        }
+        input[type="text"],
+        button {
+            width: 100%; /* Make input fields and button fill the container */
+            margin-bottom: 10px; /* Add some space between input fields and button */
+            padding: 8px; /* Add padding to input fields and button */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Update Category</h2>
+        <form action="/api1/updateCategory" method="post">
+            <label for="categoryId">Category ID:</label>
+            <input type="text" id="categoryId" name="categoryId" th:value="${categoryId}" /><br><br>
+            <label for="categoryName">New Category Name:</label>
+            <input type="text" id="categoryName" name="categoryName" /><br><br>
+            <button type="submit">Update Category</button>
+        </form>
+    </div>
+</body>
+</html>

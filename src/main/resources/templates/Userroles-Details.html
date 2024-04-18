@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Likes for Post</title>
+    <style>
+		table,td,th{
+			border:1px solid black;
+			background-color:rgb(255, 255, 255);
+		}
+		body{
+			background-color:rgb(192, 192, 192);
+		}
+		
+	</style>
+</head>
+<body>
+    <h1>User By UserRole</h1>
+    <table>
+        <thead>
+            <tr>
+				
+              <th>UserID</th>
+              <th>Username</th>
+              <th>email</th>
+              <th>password</th>
+               <th>fullname</th>
+                <th>UserRoleID</th>
+                <th>rolename</th>
+               <!--  Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${userRoles}">
+               <td th:text="${user.user.userID}"></td>
+               <td th:text="${user.user.username}"></td>
+               <td th:text="${user.user.email}"></td>
+               <td th:text="${user.user.password}"></td>
+                <td th:text="${user.user.fullName}"></td>
+                <td th:text="${user.userRole.userRoleID}"></td>
+                  <td th:text="${user.userRole.roleName}"></td>
+              <!--   <td th:text="${like.content}"></td>
+                
+                Add more table cells to display other like attributes -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

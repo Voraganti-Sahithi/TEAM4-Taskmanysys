@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Error</title>
+<style>
+body {
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        background-color: #C683D7; /* Light Gray */
+
+        color: #333; /* Dark gray */
+
+        margin: 0;
+
+        padding: 0;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        height: 100vh;
+
+    }
+
+    .container {
+
+        max-width: 800px;
+
+        background-color: #fff; /* White */
+
+        border-radius: 10px;
+
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+        padding: 40px;
+
+        text-align: center;
+
+        transition: transform 0.3s ease;
+
+    }
+
+    .container:hover {
+
+        transform: translateY(-5px);
+
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+
+    }
+
+    h1 {
+
+        color: #C70039; /* Dark gray */
+
+        margin-bottom: 30px;
+
+    }
+
+    table {
+
+        width: 100%;
+
+        border-collapse: collapse;
+
+        margin-bottom: 20px;
+
+    }
+
+    th, td {
+
+        padding: 10px;
+
+        border-bottom: 1px solid #ddd; /* Light Gray */
+
+    }
+
+    th {
+
+        background-color: #B931FC; /* Blue */
+
+        color: #fff;
+
+        text-align: left;
+
+    }
+
+    td {
+
+        text-align: left;
+
+    }
+
+    .btn {
+
+        display: inline-block;
+
+        padding: 10px 20px;
+
+        background-color: #B931FC; /* Blue */
+
+        color: #fff;
+
+        text-decoration: none;
+
+        border-radius: 5px;
+
+        transition: background-color 0.3s ease;
+
+        cursor: pointer;
+
+        border: none;
+
+    }
+
+    .btn:hover {
+
+        background-color: #00FFFF; /* Darker Blue */
+
+    }
+
+</style>
+<title>Error</title>
+</head>
+<body>
+<div class="container">
+    <h1 style="color: darkblue;">Error</h1>
+    <h2 style="color: darkred;font-family: 'papyrus', sans-serif;font-weight: bold;"th:text="${errorMessage}"></h2>
+    <div class="submit-container">
+        <button class="previous-button" onclick="window.history.back()">Home Page</button>
+    </div>
+</div>
+</body>
+</html>

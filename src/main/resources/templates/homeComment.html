@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Task Management Tool</title>
+<style>
+		/* Center aligning the container */
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			/* Adjust to fit the viewport height */
+			background-image: url('https://media.istockphoto.com/id/1341538285/photo/being-organased-saves-tame.webp?b=1&s=170667a&w=0&k=20&c=vWcvUzJczooUH5Gul4TW-cTLzIW862y6Q5hI2ImJRhk=');
+			background-size: cover;
+			/* Cover the entire container */
+			background-position: center;
+			/* Center the image */
+			background-repeat: no-repeat;
+			/* Do not repeat the image */
+			padding: 20px;
+			/* Add padding to the container */
+			color: white;
+			/* Set text color to white */
+		}
+		/* Style for button */
+		.button {
+			display: inline-block;
+			padding: 10px 20px;
+			/* Adjusted padding */
+			margin: 8px;
+			/* Decreased margin */
+			background-color: #4CAF50;
+			/* Green color for the button */
+			color: #fff;
+			/* White text color */
+			border: none;
+			/* No border */
+			border-radius: 20px;
+			/* Rounded corners */
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			font-family: 'Arial', sans-serif;
+			font-size: 16px;
+			/* Increased font size */
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			/* Added transition for background-color and box-shadow */
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+			/* Box shadow for button */
+		}
+		/* Background color for the body */
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #333;
+			/* Dark background color */
+		}
+		/* Endpoint styling */
+		.endpoint {
+			margin-top: 20px;
+			/* Increased margin */
+			text-align: center;
+			/* Align text to the center */
+		}
+		/* Endpoint title styling */
+		.endpoint h1 {
+			font-size: 20px;
+			/* Increased font size */
+			margin-bottom: 10px;
+			/* Add margin below the title */
+			color: white;
+			/* Set text color to white */
+		}
+		/* Button hover effect */
+		.button:hover {
+			background-color: #45a049;
+			/* Darker green color on hover */
+			box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+			/* Increased box shadow on hover */
+			transform: scale(1.05);
+			/* Scale up on hover */
+		}
+		  p {
+            color: maroon;
+            margin-bottom: 20px;
+            font-family: "Times New Roman", Times, serif;
+        }
+		/* Title styling */
+		h1.title {
+			font-size: 40px;
+			/* Increased font size */
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			/* Stylish font */
+			color: orange;
+			/* Gold color for the title */
+			margin-bottom: 30px;
+			/* Add margin below the title */
+		}
+</style>
+</head>
+<body>
+<div class="container">
+<h1 class="title">Welcome to the User Homepage</h1> 
+
+<div class="endpoint">
+<button onclick="window.location.href='http://localhost:9999/api1/comments'" class="button">View All Comments</button>
+<button onclick="window.location.href='http://localhost:9999/api1/comment'" class="button">Get Comments By CommentId</button>
+<button onclick="window.location.href='http://localhost:9999/api1/comment/create'" class="button">Create Comment</button>
+<button onclick="window.location.href='http://localhost:9999/api1/updateCommentForm'" class="button">Update Comment</button>
+<button onclick="window.location.href='http://localhost:9999/api1/deleteCommentForm'" class="button">Delete Comment By Id</button>
+</div>
+</body>
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <style>
+        body {
+            background-color: #FFF3C7; /* light gray background */
+            font-family: Arial, sans-serif;
+            color: #333; /* dark gray text color */
+            text-align: center; /* Center align text */
+        }
+
+        h2 {
+            color: #F7418F; /* blue header color */
+        }
+
+        .textbox {
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            text-align: left; /* Left align text */
+            overflow: auto; /* Enable scrolling for overflow content */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff; /* blue link color */
+        }
+
+        a:hover {
+            color: #0056b3; /* darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to the Comment Homepage</h2>
+    <div class="textbox">
+        <ul>
+
+            
+            <li><div class="textbox"><a th:href="@{/api1/comments}">View All Comments</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/comment}">View Comments By CommentId</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/comment/create}">Create Comment</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/updateCommentForm}">Update Comment</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/deleteCommentForm}">Delete Comment By Id</a></div></li>
+        </ul>
+    </div>
+</body>
+</html>
+-->

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <style>
+    
+    	.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			/* Adjust to fit the viewport height */
+			background-image: url('https://media.istockphoto.com/id/1341538285/photo/being-organased-saves-tame.webp?b=1&s=170667a&w=0&k=20&c=vWcvUzJczooUH5Gul4TW-cTLzIW862y6Q5hI2ImJRhk=');
+			background-size: cover;
+			/* Cover the entire container */
+			background-position: center;
+			/* Center the image */
+			background-repeat: no-repeat;
+			/* Do not repeat the image */
+			padding: 20px;
+			/* Add padding to the container */
+			color: white;
+			/* Set text color to white */
+		}
+        body {
+            background-color: #FFF3C7; /* light gray background */
+            font-family: Arial, sans-serif;
+            color: #333; /* dark gray text color */
+            text-align: center; /* Center align text */
+        }
+
+        h2 {
+            color: #F7418F; /* blue header color */
+        }
+
+        .textbox {
+            width: 80%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            text-align: left; /* Left align text */
+            overflow: auto; /* Enable scrolling for overflow content */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff; /* blue link color */
+        }
+
+        a:hover {
+            color: #0056b3; /* darker blue on hover */
+        }
+        
+        .button {
+			display: inline-block;
+			padding: 10px 20px;
+			/* Adjusted padding */
+			margin: 8px;
+			/* Decreased margin */
+			background-color: #4CAF50;
+			/* Green color for the button */
+			color: #fff;
+			/* White text color */
+			border: none;
+			/* No border */
+			border-radius: 20px;
+			/* Rounded corners */
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			font-family: 'Arial', sans-serif;
+			font-size: 16px;
+			/* Increased font size */
+			transition: background-color 0.3s ease, box-shadow 0.3s ease;
+			/* Added transition for background-color and box-shadow */
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+			/* Box shadow for button */
+		}
+		
+        .button:hover {
+			background-color: #45a049;
+			/* Darker green color on hover */
+			box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+			/* Increased box shadow on hover */
+			transform: scale(1.05);
+			/* Scale up on hover */
+		}
+    </style>
+</head>
+<body>
+<div class="container">
+<h2>Welcome to the Category Homepage</h2>
+ 
+
+<div class="endpoint">
+<button onclick="window.location.href='http://localhost:9999/api1/categories'" class="button"> View All Category</button>
+<button onclick="window.location.href='http://localhost:9999/api1/category'" class="button">View Categories By CategoryId</button>
+<button onclick="window.location.href='http://localhost:9999/api1/task-count'" class="button">View Categories with Task Count</button>
+<button onclick="window.location.href='http://localhost:9999/api1/create'" class="button">Create Category</button>
+<button onclick="window.location.href='http://localhost:9999/api1/updateCategoryForm'" class="button">Update Category</button>
+<button onclick="window.location.href='http://localhost:9999/api1/deleteCategoryForm'" class="button">Delete Category</button>
+</div>
+
+</div>
+</body>
+<!--<body>
+    <h2>Welcome to the Category Homepage</h2>
+    <div class="container">
+        <ul>
+            <li><div class="textbox"><a th:href="@{/api1/categories}">View All Categories</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/category}">View Categories By CategoryId</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/task-count}">View Categories with Task Count</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/create}">Create Category</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/updateCategoryForm}">Update Category</a></div></li>
+            <li><div class="textbox"><a th:href="@{/api1/deleteCategoryForm}">Update Category</a></div></li>
+        </ul>
+    </div>
+</body> -->
+</html>

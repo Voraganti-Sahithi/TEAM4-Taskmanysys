@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sign In</title>
+
+<style>
+
+    body {
+
+        font-family: Arial, sans-serif;
+
+        background-color: #f5f5f5;
+
+        margin: 0;
+
+        background-image: url('https://media.istockphoto.com/id/952067048/photo/schedule-management-of-business-concept.jpg?s=612x612&w=0&k=20&c=jUU1ci9koawnwdXnBmRAluIfW_3p2VSmk4c8v8wENRE=');
+
+        padding: 0;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        height: 100vh;
+
+    }
+
+    .container {
+
+        /*background-color: #fff;*/
+
+        border-radius: 8px;
+
+        background-color:antiquewhite;
+
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        padding: 20px;
+
+        width: 300px;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .container h2 {
+
+        margin-bottom: 20px;
+
+        text-align: center;
+
+    }
+
+    .form-group {
+
+        margin-bottom: 15px;
+
+    }
+
+    .form-group label {
+
+        display: block;
+
+        font-weight: bold;
+
+    }
+
+    .form-group input {
+
+        width: 100%;
+
+        padding: 8px;
+
+        border: 1px solid #ccc;
+
+        border-radius: 4px;
+
+    }
+
+    .btn {
+
+        width: 100%;
+
+        padding: 10px;
+
+        border: none;
+
+        border-radius: 4px;
+
+        background-color: #4CAF50;
+
+        color: white;
+
+        cursor: pointer;
+
+        transition: background-color 0.3s ease;
+
+    }
+
+    .btn:hover {
+
+        background-color: #45a049;
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Sign In</h2>
+
+<!--<form action="@{/api1/homepage}" method="get">-->
+
+<form role="form" method="GET" th:action="@{/api1/homepage}">
+
+<div class="form-group">
+
+<label for="username">Username</label>
+
+<input type="text" id="username" name="username" placeholder="Enter your username">
+
+</div>
+
+<div class="form-group">
+
+<label for="password">Password</label>
+
+<input type="password" id="password" name="password" placeholder="Enter your password">
+
+</div>
+
+<div class="submit-container">
+
+<button type="submit" value="Submit" class="btn">Sign in </button>
+
+</div>
+
+</form>
+ 
+<script>
+
+        function validateForm() {
+
+            var username = document.getElementById("username").value;
+
+            var password = document.getElementById("password").value;
+ 
+            // Username validation: alphanumeric characters only, length between 4 and 20 characters
+
+            var usernameRegex = /^[a-zA-Z0-9]{4,20}$/;
+
+            if (!usernameRegex.matches(username)) {
+
+                alert("Username must contain only alphanumeric characters and be between 4 and 20 characters long.");
+
+                return false;
+
+            }
+ 
+            // Password validation: at least one uppercase letter, one lowercase letter, one digit, one special character,
+
+            // and length between 8 and 20 characters
+
+            var passwordRegex = /^[a-zA-Z0-9]{6,20}$/;
+
+            if (!passwordRegex.matches(password)) {
+
+                alert("Password must contain only alphanumeric characters and be between 6 and 20 characters long.");
+
+                return false;
+
+            }
+ 
+            return true; // Form will submit if all validations pass
+
+        }
+
+    </script>
+ 
+</body>
+ 
+</html>
+
+
+<!--  
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+-->

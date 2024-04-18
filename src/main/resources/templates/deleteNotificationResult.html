@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Deletion of Notification Result</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(128, 128, 128); /* Light gray */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Set height to viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h2 {
+            color: rgb(128, 128, 255); 
+        }
+        p {
+            color: rgb(255, 0, 128); 
+        }
+        a {
+            color: rgb(0, 255, 64); 
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        a:hover {
+            color: rgb(0, 128, 128); /* Darker blue */
+        }
+</style>
+</head>
+<body>
+<h2>Deletion of Notification Result</h2>
+<p th:text="${message}"></p>
+<a href="/api1/notificationHome">Go back to homepage</a>
+</body>
+</html>

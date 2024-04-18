@@ -1,0 +1,77 @@
+<label<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Retrieve by Project Details By DateRange</title>
+<style type="text/css">
+    body {
+        background: linear-gradient(135deg, #D7BDE2, #A9CCE3); /* Gradient from Sky Blue to Royal Blue */
+        color: #333333; /* Dark Gray */
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        margin-top: 50px;
+        color: #ffffff; /* White */
+    }
+    .container {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+    .container:hover {
+        transform: translateY(-5px);
+    }
+    label {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #ffffff; /* White */
+    }
+    input[type="text"] {
+        padding: 15px;
+        width: 80%;
+        margin-bottom: 30px;
+        border: none;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input[type="text"]:focus {
+        background-color: rgba(255, 255, 255, 0.95); /* White with slight transparency */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White shadow on focus */
+    }
+    input[type="submit"] {
+        padding: 15px 30px;
+        background-color: #ffffff; /* White */
+        color: #56ccf2; /* Sky Blue */
+        border: 2px solid #ffffff; /* White */
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+    input[type="submit"]:hover {
+        background-color: rgb(255, 128, 255); /* purple */
+        color: rgb(0, 0, 0); /* Black */
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+<h1>Retrieve Project Details by DateRange</h1>
+<!-- <form action="/date-range" method="GET">-->
+<form  role="form" 
+	method="GET" 
+	th:action="@{/date-range}"
+	th:object="${project}">
+<label for="start">Enter  Startdate to Retrieve:</label><br> 
+<input type="date" id="startDate" name="startDate"><br>
+<label for="end">End Date:</label>
+<input type="date" id="endDate" name="endDate">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

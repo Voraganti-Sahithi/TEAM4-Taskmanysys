@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Delete Nootification</title>
+<style>
+        body {
+            background-color: rgb(128, 128, 192); /* Light gray */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333; /* Dark gray */
+        }
+        form {
+            margin-top: 20px;
+        }
+        div {
+            margin-top: 10px;
+        }
+        div.success {
+            color: green;
+        }
+        div.error {
+            color: red;
+        }
+</style>
+</head>
+<body>
+<h1>Delete notification</h1>
+<div th:if="${param.successMessage}" class="success">
+<p th:text="${param.successMessage}"></p>
+</div>
+<div th:if="${param.errorMessage}" class="error">
+<p th:text="${param.errorMessage}"></p>
+</div>
+<form action="#" th:action="@{deleteNotification}" method="post">
+<input type="hidden" name="_method" value="delete" />
+<label for="notificationId">Notification ID:</label>
+<input type="text" id="notificationId" name="notificationId" />
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>

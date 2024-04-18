@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Success</title>
+    <style>
+        body {
+            background-color: #CADCFC; /* Set your desired background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensures content is centered vertically */
+            margin: 0; /* Removes default margin */
+        }
+        .content {
+            text-align: center; /* Center align text */
+            background-color: #EA738D; /* Background color for the content area */
+            padding: 20px; /* Add some padding for better appearance */
+            border-radius: 8px; /* Add rounded corners for the content area */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Update Successful</h2>
+        <p th:text="${message}"></p>
+    </div>
+</body>
+</html>

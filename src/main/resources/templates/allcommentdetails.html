@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Comment Details</title>
+<style>
+body {
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        background-color: #89ABE3; /* Light Gray */
+
+        color: #333; /* Dark gray */
+
+        margin: 0;
+
+        padding: 0;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        height: 100vh;
+
+    }
+
+    .container {
+
+        max-width: 800px;
+
+        background-color: #fff; /* White */
+
+        border-radius: 10px;
+
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+        padding: 40px;
+
+        text-align: center;
+
+        transition: transform 0.3s ease;
+
+    }
+
+    .container:hover {
+
+        transform: translateY(-5px);
+
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+
+    }
+
+    h1 {
+
+        color: #333; /* Dark gray */
+
+        margin-bottom: 30px;
+
+    }
+
+    table {
+
+        width: 100%;
+
+        border-collapse: collapse;
+
+        margin-bottom: 20px;
+
+    }
+
+    th, td {
+
+        padding: 10px;
+
+        border-bottom: 1px solid #ddd; /* Light Gray */
+
+    }
+
+    th {
+
+        background-color: #EA738D; /* Blue */
+
+        color: #fff;
+
+        text-align: left;
+
+    }
+
+    td {
+
+        text-align: left;
+
+    }
+
+    .btn {
+
+        display: inline-block;
+
+        padding: 10px 20px;
+
+        background-color: #EA738D; /* Blue */
+
+        color: #fff;
+
+        text-decoration: none;
+
+        border-radius: 5px;
+
+        transition: background-color 0.3s ease;
+
+        cursor: pointer;
+
+        border: none;
+
+    }
+
+    .btn:hover {
+
+        background-color: #00FFFF; /* Darker Blue */
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Comment Details</h1>
+
+<table>
+
+<tr>
+
+<th>Comment ID</th>
+
+<th>Comment text</th>
+
+<th>Comment createdAt</th>
+
+<th>Comment task</th>
+
+<th>Comment user</th>
+
+</tr>
+
+<tr th:each="comment : ${comment}">
+
+<td th:text="${comment.commentID}"></td>
+
+<td th:text="${comment.text}"></td>
+
+<td th:text="${comment.createdAt}"></td>
+
+<td th:text="${comment.task.taskID}"></td>
+
+<td th:text="${comment.user.userID}"></td>
+
+</tr>
+
+</table>
+
+<button class="btn" onclick="window.history.back()">Back to Previous Page</button>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create Tasks</title>
+<style>
+body {
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        background-color: #E1AFD1; /* Light Gray */
+
+        color: #333; /* Dark gray */
+
+        margin: 0;
+
+        padding: 0;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        height: 100vh;
+
+    }
+
+    .container {
+
+        max-width: 800px;
+
+        background-color: #fff; /* White */
+
+        border-radius: 10px;
+
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+        padding: 40px;
+
+        text-align: center;
+
+        transition: transform 0.3s ease;
+
+    }
+
+    .container:hover {
+
+        transform: translateY(-5px);
+
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+
+    }
+
+    h1 {
+
+        color: #333; /* Dark gray */
+
+        margin-bottom: 30px;
+
+    }
+
+    table {
+
+        width: 100%;
+
+        border-collapse: collapse;
+
+        margin-bottom: 20px;
+
+    }
+
+    th, td {
+
+        padding: 10px;
+
+        border-bottom: 1px solid #ddd; /* Light Gray */
+
+    }
+
+    th {
+
+        background-color: #E72929; /* Blue */
+
+        color: #fff;
+
+        text-align: left;
+
+    }
+
+    td {
+
+        text-align: left;
+
+    }
+
+    .btn {
+
+        display: inline-block;
+
+        padding: 10px 20px;
+
+        background-color: #00FFFF; /* Blue */
+
+        color: #fff;
+
+        text-decoration: none;
+
+        border-radius: 5px;
+
+        transition: background-color 0.3s ease;
+
+        cursor: pointer;
+
+        border: none;
+
+    }
+
+    .btn:hover {
+
+        background-color: #00FFFF; /* Darker Blue */
+
+    }
+
+</style>
+
+</head>
+<body>
+<div class="container">
+    <h1 style="color: darkred;">Update Task</h1>
+    
+    <form action="/api1/tasks1/update" method="put">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="taskId">Task Id:</label>
+                <input type="number" id="taskID" name="taskID" class="form-control" th:value="${task.taskID}" required>
+            </div>
+            <div class="form-group">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" class="form-control" th:value="${task.taskName}" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" class="form-control" th:value="${task.description}" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" name="dueDate" class="form-control" th:value="${task.dueDate}" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="priority">Priority:</label>
+                <select id="priority" name="priority" class="form-control" th:value="${task.priority}" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status" class="form-control" th:value="${task.status}" required>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="projectId">Project Id:</label>
+                <input type="number" id="projectId" name="project" class="form-control" th:value="${task.project.projectID}" required>
+            </div>
+            <div class="form-group">
+                <label for="userId">User Id:</label>
+                <input type="number" id="userId" name="user" class="form-control" th:value="${task.user.userID}" >
+            </div>
+        </div>
+        <div class="submit-container">
+            <input type="submit" value="Update Task" class="btn">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update User Role</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(128, 128, 192); /* Light Gray */
+            color: #333; /* Dark gray */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        form {
+            max-width: 600px;
+            background-color: #fff; /* White */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            color: #333; /* Dark gray */
+            margin-bottom: 30px;
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd; /* Light Gray */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        button[type="submit"] {
+            background-color: #007bff; /* Blue */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker Blue */
+        }
+    </style>
+	</head>
+	<body>
+	<h2>Update User Role</h2>
+	<form  role="form"
+		method="put"
+		th:action="@{/updates}"
+		th:object="${UserRole}">
+	<div class="labeldiv">
+	<label for="userRoleID">userId:</label>
+	<input type="text" id="userRoleID" th:field="*{userRoleID}" required>
+	</div>
+	<label for="roleName">roleName:</label>
+	<input type="text" id="roleName" th:field="*{roleName}" required>
+	<input type="submit" value="Submit">
+	</form>
+	</body>
+	</html>

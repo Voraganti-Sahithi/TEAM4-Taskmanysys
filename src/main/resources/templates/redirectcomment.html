@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Comment</title>
+    <style>
+        body {
+            background-color: rgb(64, 128, 128); /* Light gray */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333; /* Dark gray */
+        }
+        form {
+            margin-top: 20px;
+        }
+        div {
+            margin-top: 10px;
+        }
+        div.success {
+            color: green;
+        }
+        div.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete Comment</h1>
+    
+    <div th:if="${param.successMessage}" class="success">
+        <p th:text="${param.successMessage}"></p>
+    </div>
+    
+    <div th:if="${param.errorMessage}" class="error">
+        <p th:text="${param.errorMessage}"></p>
+    </div>
+    
+    <form action="#" th:action="@{deleteComment}" method="post">
+        <input type="hidden" name="_method" value="delete" />
+        <label for="commentId">Comment ID:</label>
+        <input type="text" id="commentId" name="commentId" />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>

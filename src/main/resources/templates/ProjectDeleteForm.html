@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Delete Project</title>
+<style>
+	body{
+		background-color:rgb(169, 202, 205);
+		color: white;
+		text-align: center;
+	}
+	form {
+		margin: 50px auto;
+		width: 50%;
+	}
+	input[type="text"] {
+		padding: 10px;
+		width: 80%;
+		margin-bottom: 20px;
+	}
+	input[type="submit"] {
+		padding: 10px 20px;
+		background-color: rgb(255, 255, 255);
+		color: rgb(64, 0, 64);
+		border: none;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+<h1>Delete project by projectID</h1>
+<form action="/delete" method="GET">
+<label for="titleId">Enter Project ID:</label><br>
+<input type="number" id="projectID" name="projectID"><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

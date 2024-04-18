@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Delete UserRoles</title>
+<style>
+	body{
+		background-color:rgb(169, 202, 205);
+		color: white;
+		text-align: center;
+	}
+	form {
+		margin: 50px auto;
+		width: 50%;
+	}
+	input[type="text"] {
+		padding: 10px;
+		width: 80%;
+		margin-bottom: 20px;
+	}
+	input[type="submit"] {
+		padding: 10px 20px;
+		background-color: rgb(255, 255, 255);
+		color: rgb(64, 0, 64);
+		border: none;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+<h1>Deleted UserID And UserRoleID</h1>
+<form action="/revokes" method="GET">
+<label for="userID">Enter UserID:</label><br>
+<input type="number" id="userID" name="userID"><br>
+<label for="userRoleID">Enter UserRoleID:</label><br>
+<input type="number" id="userRoleID" name="userRoleID"><br>
+
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Delete Attachment</title>
+<style>
+        body {
+            background-color: rgb(64, 128, 128); /* Light gray */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333; /* Dark gray */
+        }
+        form {
+            margin-top: 20px;
+        }
+        div {
+            margin-top: 10px;
+        }
+        div.success {
+            color: green;
+        }
+        div.error {
+            color: red;
+        }
+</style>
+</head>
+<body>
+<h1>Delete Attachment</h1>
+<div th:if="${param.successMessage}" class="success">
+<p th:text="${param.successMessage}"></p>
+</div>
+<div th:if="${param.errorMessage}" class="error">
+<p th:text="${param.errorMessage}"></p>
+</div>
+<form action="#" th:action="@{deleteAttachment}" method="post">
+<input type="hidden" name="_method" value="delete" />
+<label for="attachmentId">Attachment ID:</label>
+<input type="text" id="attachmentId" name="attachmentId" />
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>
